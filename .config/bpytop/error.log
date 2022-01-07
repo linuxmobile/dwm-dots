@@ -1,0 +1,50 @@
+06/01/22 (16:04:16) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (16:05:08) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (16:07:13) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (20:46:52) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (20:47:08) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (20:47:32) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (20:47:44) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (20:48:00) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+06/01/22 (21:19:55) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+07/01/22 (00:21:17) | ERROR: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1357, in refresh
+    for f in os.listdir(d):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/linuxmobile/.config/bpytop/themes'

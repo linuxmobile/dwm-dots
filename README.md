@@ -51,7 +51,8 @@ paru -S python ffmpeg pulseaudio pulseaudio-alsa alsa-utils dunst xclip scrot   
 thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m          \\
 viewnior mpv neofetch htop lxappearance picom-jonaburg-git rofi rsync pavucontrol \\
 ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \\
-exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop kitty wal-git       
+exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop kitty wal-git imlib2   \\
+xorg-xsetroot      
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌
@@ -62,8 +63,6 @@ git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-\~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-\~/.oh-my-zsh/custom}/plugins/zsh-completions  
 ```
-
-#### Instalamos DWM 🪟
 
 
 #### Ahora procedemos a Clonar y copiar los Dotfiles
@@ -94,6 +93,14 @@ fc-cache -rv
 ```
 
     Eso es todo lo necesario. Tal vez necesite ir actualizando este post, ya que siempre es necesario mantener actualizado todo. Quizá faltan cosas, porque me olvidé o por alguna razón. Así que agregaré todo lo necesario con el tiempo.
+
+
+### Instalamos DWM 🪟
+
+```sh
+cd $HOME/dwm-dots/chadwm/
+sudo make install
+```
 
 
 ### Creditos

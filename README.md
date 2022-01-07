@@ -1,14 +1,14 @@
 # DWM - DOTS
 
-* **Window Manager** • [DWM](https://github.com/siduck/chadwm)🎨 Tiles Everywhere!
-* **Shell** • [Zsh](https://www.zsh.org) 🐚 con [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
-* **Terminal** • [Kitty](https://github.com/kovidgoyal/kitty) 💻 Una terminal que soporta imagenes!
-* **Panel** • [dwm-bar](https://github.com/siduck/chadwm)🍧 Sencilla, sin lujos!
-* **Compositor** • [Picom](https://github.com/yshui/picom) 🍩 rounded corners y mucho BLUR!
-* **Notify Daemon** • [Dunst](https://github.com/dunst-project/dunst) 🍃 minimalista!
-* **Launcher** • [Rofi](https://github.com/davatorium/rofi) 🚀 Realmente rápido y customizable!
-* **File Manager** • [Ranger](https://github.com/ranger/ranger)🔖 customizado!
-* **GUI Basic-IDE** • [NVIM](https://github.com/vlagh3/NvChad) 🗒️Un IDE muy hermoso!
+* **Window Manager** • [DWM ](https://github.com/siduck/chadwm)🎨 Tiles Everywhere!
+* **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
+* **Terminal** • [Kitty ](https://github.com/kovidgoyal/kitty) 💻 Una terminal que soporta imagenes!
+* **Panel** • [dwm-bar ](https://github.com/siduck/chadwm)🍧 Sencilla, sin lujos!
+* **Compositor** • [Picom ](https://github.com/yshui/picom) 🍩 rounded corners y mucho BLUR!
+* **Notify Daemon** • [Dunst ](https://github.com/dunst-project/dunst) 🍃 minimalista!
+* **Launcher** • [Rofi ](https://github.com/davatorium/rofi) 🚀 Realmente rápido y customizable!
+* **File Manager** • [Ranger ](https://github.com/ranger/ranger)🔖 customizado!
+* **GUI Basic-IDE** • [NVIM ](https://github.com/vlagh3/NvChad) 🗒️Un IDE muy hermoso!
 
 ## Este es mi actual desktop
 

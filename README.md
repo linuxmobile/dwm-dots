@@ -106,7 +106,7 @@ fc-cache -rv
 ### Instalamos DWM 🪟
 
 ```sh
-cd $HOME/dwm-dots/chadwm/
+cd $HOME/dwm-dots/lnxdwm/
 sudo make install
 ```
 

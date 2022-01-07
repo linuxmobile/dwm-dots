@@ -1,0 +1,9 @@
+#!/bin/bash
+wallpapers=($(ls ~/.wallpapers))
+random=$((RANDOM % ${#wallpapers[@]}))
+while [ "$(cat ~/.wallpapers/.random)" == "${wallpapers[$random]}" ]; do
+	random=$((RANDOM % ${#wallpapers[@]}))
+done
+wal -i ~/.wallpapers/${wallpapers[$random]} 2>/dev/null
+xwallpaper --zoom ~/.wallpapers/${wallpapers[$random]}
+echo "${wallpapers[$random]}" > ~/.wallpapers/.random

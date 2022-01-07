@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# add your autostart stuffs here
+
+# Add Background
+~/.scripts/wp &
+
+# Set Layout to Latam
+setxkbmap latam &
+
+# Disable Screensaver
+xset -dpms s off &
+
+# Notify
+dunst &
+
+# Clipboard
+xclip &
+
+# Run compositor
+picom &
+
+# run bar script and dwm ( do not remove this )
+~/.dwm/bar/./bar.sh &
+dwm

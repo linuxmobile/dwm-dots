@@ -19,7 +19,7 @@
 Esto va a ser un intento de un "paso a paso". Pero siempre recomiendo no copiar y pegar al pie de la letra. Sino "inspirarse".  
 Como suelen decir en la comunidad de linux. Solamente [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
-### Instalación (dependencias)
+### Instalación (dependencias y paquetes)
 
     Primero que nada un breve "disclaimer". Esta configuración es la que estoy utilizando actualmente. Está pensado para funcionar en Archlinux, y para dejar el escritorio tal cual lo tengo yo. Por lo tanto, si estás utilizando otra distribución vas a tener que instalar las dependencias en base a ello. Así que si no utilizas Archlinux, no deberías copiar y pegar.
 
@@ -66,6 +66,11 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 
 
 #### Ahora procedemos a Clonar y copiar los Dotfiles
+
+<img src='.misc/unimatrix.png'>
+<img src='.misc/nvim.png'>
+<img src='.misc/wall-script.png'>
+
 
 ##### Clonamos y Copiamos
 

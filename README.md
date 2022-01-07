@@ -67,8 +67,11 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 
 #### Ahora procedemos a Clonar y copiar los Dotfiles
 
+_unimatrix|ranger|htop|rxfetch_
 <img src='.misc/unimatrix.png'>
+_htop|nvim|cava|ranger_
 <img src='.misc/nvim.png'>
+_unimatrix|nvim|wal-script|ranger_
 <img src='.misc/wall-script.png'>
 
 

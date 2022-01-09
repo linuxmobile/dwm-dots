@@ -12,7 +12,7 @@
         <img src="https://img.shields.io/github/forks/linuxmobile/dwm-dots?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
     </a>
     <img src="https://img.shields.io/github/repo-size/linuxmobile/dwm-dots?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
-    <img src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415">
+    <img src="https://badges.pufler.dev/visits//linuxmobile/dwm-dots?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415">
 </div>
 
 <p/>

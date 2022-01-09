@@ -1,5 +1,23 @@
 # DWM - DOTS
 
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+
+<!-- BADGES -->
+<div align="center">
+    <p></p>
+    <a href="https://github.com/linuxmobile/dwm-dots/stargazers">
+        <img src="https://img.shields.io/github/stars/linuxmobile/dwm-dots?color=%238dc776&labelColor=%23101415&style=for-the-badge">
+    </a>
+    <a href="https://github.com/janleigh/dotfiles/network/members/">
+        <img src="https://img.shields.io/github/forks/linuxmobile/dwm-dots?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
+    </a>
+    <img src="https://img.shields.io/github/repo-size/linuxmobile/dwm-dots?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
+</div>
+
+<p/>
+
+---
+
 * **Window Manager** • [DWM ](https://github.com/siduck/chadwm)🎨 Tiles Everywhere!
 * **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
 * **Terminal** • [Kitty ](https://github.com/kovidgoyal/kitty) 💻 Una terminal que soporta imagenes!

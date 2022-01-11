@@ -47,7 +47,7 @@ Como suelen decir en la comunidad de linux. Solamente [R.T.F.M](https://en.wikip
 #### Instalando Paru como AUR Helper 🆘
 
 ```sh
-\# For Aur Helper install Paru
+# For Aur Helper install Paru
 echo "### Installing paru as AUR Helper"
 mkdir $HOME/Downloads/_cloned-repos
 cd $HOME/Downloads/_cloned-repos
@@ -59,7 +59,7 @@ makepkg -si
 #### Instalamos Oh-My-Zsh 🐚
 
 ```sh
-\# First install Oh-My-Zsh  
+# First install Oh-My-Zsh  
 echo "### Installing oh-my-zsh"  
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  
 ```
@@ -68,21 +68,21 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ```sh
 echo "### Installing Required Packages"
-paru -S python ffmpeg pulseaudio pulseaudio-alsa alsa-utils dunst xclip scrot     \\
-thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m          \\
-viewnior mpv neofetch htop lxappearance picom-jonaburg-git rofi rsync pavucontrol \\
-ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \\
-exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop kitty wal-git imlib2   \\
-xorg-xsetroot cascaydia-code-fonts nerd-fonts-jetbrains-mono nerd-fonts-noto
+paru -S python ffmpeg pulseaudio pulseaudio-alsa alsa-utils dunst xclip scrot     \
+thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m neovim   \
+viewnior mpv neofetch htop lxappearance picom-jonaburg-git rofi rsync pavucontrol \
+ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \
+exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop kitty wal-git imlib2   \
+xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌
 
 ```sh 
 echo "### Installing Oh-My-Zsh Plugins"
-git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-\~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-\~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-\~/.oh-my-zsh/custom}/plugins/zsh-completions  
+git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-completions  
 ```
 
 
@@ -107,10 +107,10 @@ rsync -avxHAXP --exclude '.git*' .* \~/
 ##### Agregamos los iconos
 
 ```sh
-pushd \~/.icons/ && \\
-tar -xJf Papirus-Custom.tar.xz && tar -xJf Papirus-Dark-Custom.tar.xz && \\
-sudo ln -vs \~/.icons/Papirus-Custom /usr/share/icons/
-sudo ln -vs \~/.icons/Papirus-Dark-Custom /usr/share/icons/
+pushd ~/.icons/ && \
+tar -xJf Papirus-Custom.tar.xz && tar -xJf Papirus-Dark-Custom.tar.xz && \
+sudo ln -vs ~/.icons/Papirus-Custom /usr/share/icons/
+sudo ln -vs ~/.icons/Papirus-Dark-Custom /usr/share/icons/
 rm -rf *.tar.xz
 popd  
 ```

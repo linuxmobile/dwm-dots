@@ -15,7 +15,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ar-round"
+ZSH_THEME="lena"
 
 # Set list of themes to pick from when loading at random.
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -129,11 +129,18 @@ alias nanosu="${PRIV} nano"
 alias nvimsu="${PRIV} nvim"
 alias cleanram="${PRIV} sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
+# YT music
+alias yt="~/.scripts/yt-r"
+
+# ps_mem
+alias mem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|kitty|zsh|--'"
 # Set wallpaper and Colors
 alias wp="~/.scripts/wp"
 alias monitor="~/.scripts/monset.sh"
+
 # Fachafetch
 alias rx="~/.scripts/rxfetch"
+
 # Exa Settings
 alias ls="exa -lgh --icons --group-directories-first"
 alias la="exa -lgha --icons --group-directories-first"
@@ -151,5 +158,8 @@ export BAT_THEME="base16"
 wal -r
 
 
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+
+export YTFZF_EXTMENU='rofi -dmenu -fuzzy -width 1000'
+export YTFZF_ENABLE_FZF_DEFUALT_OPTS=0

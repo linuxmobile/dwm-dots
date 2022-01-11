@@ -1,0 +1,14 @@
+#!/bin/sh
+
+DMENU="rofi -dmenu -lines 3 -width 30 -i -p Youtube"
+# OPTIONS = [[label, command]]
+OPTIONS='''
+[
+  [ "Youtube (Video)",              "ytfzf -fD" ],
+  [ "Youtube (Music)",             "ytfzf -Dms" ],
+  [ "Youtube (Playlist - Random)", "ytfzf -Dmr" ]
+]
+'''
+
+label=$(echo $OPTIONS | jq -r "sort | .[][0]" | $DMENU)
+exec $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$label\") | .[1]")

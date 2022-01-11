@@ -1,0 +1,76 @@
+#! /bin/sh
+
+function hcenter {
+  text=$@
+  cols=`tput cols`
+
+  IFS=$'\n'$'\r'
+  for line in $(echo -e $text); do
+    # line_length=`echo $line | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" | wc -c`
+    line_length=`echo $line | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})(;[0-9]{1,2})?)?[m|K]//g" | wc -c`
+    half_of_line_length=`expr $line_length / 2`
+    is_odd=`expr $line_length % 2`
+    half_of_line_length=`expr $half_of_line_length + $is_odd`
+    center=`expr \( $cols / 2 \) - $half_of_line_length`
+    spaces=" "
+
+    for ((i=0; i < $center; i++)) {
+      spaces+=" "
+    }
+    echo "$spaces$line"
+  done
+}
+
+function vcenter {
+  text=$@
+  rows=`tput lines`
+  text_length=`echo -e $text | wc -l`
+  half_of_text_length=`expr $text_length / 2`
+  center=`expr \( $rows / 2 \) - $half_of_text_length`
+  lines=""
+
+  for ((i=0; i < $center-8; i++)) {
+    lines+="\n"
+  }
+  echo -e "$lines$text$lines"
+}
+
+function center {
+  text=$@
+  vcenter "`hcenter $text`"
+  #hcenter "$text"
+  #echo
+  #echo
+}
+
+#i=" "
+s='\033[0;0m'
+i="aaaa"
+
+bla='\033[0;30;40m'
+#bla='\033[7;30m'
+r='\033[0;31;41m'
+g='\033[0;32;42m'
+y='\033[0;33;43m'
+b='\033[0;34;44m'
+m='\033[0;35;45m'
+c='\033[0;36;46m'
+#w='\033[0;37m'
+w='\033[0;37;47m'
+wh='\033[0;37m'
+bl='\033[0;32m'
+
+boldb='\033[1;32m'
+
+# hlb="${boldb}"
+# separator=":"
+
+hlb='\033[1;30;42m'
+separator="\033[0;32m"
+# prefixer="\033[0;32m"
+
+# echo -E "${boldb}Cysis\033[1;37mOS\n${boldb}dis:${boldw} Arch"
+# echo -E "$bla$i$r$i$g$i$y$i$b$i$m$i$c$i$w$i$s"
+
+# center "${prefixer}${hlb}CysisOS\033[0;32m${s}\n${hlb}dis${separator}${s} Arch\n${hlb}pkg${separator}${s} $(pacman -Qq | wc -l)\n${hlb}cpu${separator}${s} i5 \n${hlb}ram${separator}${s} $(free -m | grep Mem | awk '{print $3}')\n${hlb}sda${separator}${s} $(df -h | grep sda1 | awk '{print $3}')\n $s\n$bla$i$r$i$g$i$y$i$b$i$m$i$c$i$w$i$s\n$bla$i$r$i$g$i$y$i$b$i$m$i$c$i$w$i$s"
+center "${boldb}Cysis${s}OS \n${hlb}dis${separator}${s} Arch\n${hlb}pkg${separator}${s} $(pacman -Qq | wc -l)\n${hlb}cpu${separator}${s} i5 \n${hlb}ram${separator}${s} $(free -m | grep Mem | awk '{print $3}')\n${hlb}sda${separator}${s} $(df -h | grep sda1 | awk '{print $3}')\n $s\n$bla$i$r$i$g$i$y$i$b$i$m$i$c$i$w$i$s\n$bla$i$r$i$g$i$y$i$b$i$m$i$c$i$w$i$s"

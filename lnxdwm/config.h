@@ -123,7 +123,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[]  = {  "kitty", NULL }; // change this to your term
+static const char *termcmd[]  = {  "st", NULL }; // change this to your term
 static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 
 static Key keys[] = {
@@ -131,18 +131,26 @@ static Key keys[] = {
     { MODKEY,                       XK_c,      spawn,          {.v = rofi } },
     { MODKEY,                       XK_z, spawn,          {.v = termcmd }},  
 
-    {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-
+    /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
+    /*{MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},*/
+    
+    /* kill picom */
     {MODKEY | ControlMask, XK_a, spawn, SHCMD("pkill -9 picom")},
     
+    /* Rofi scripts */
     {MODKEY, XK_q, spawn, SHCMD("~/.config/rofi/scripts/powermenu.sh")},
-    {MODKEY, XK_p, spawn, SHCMD("~/.scripts/monset.sh")},
+    {MODKEY, XK_p, spawn, SHCMD("~/.scripts/monitor")},
     {MODKEY, XK_r, spawn, SHCMD("~/.config/rofi/scripts/appsmenu.sh")},
+
+    /* YTFZF scripts. Run script and quit killing mpv */
+    {MODKEY, XK_y, spawn, SHCMD("~/.scripts/youtube")},
+    {MODKEY|ShiftMask, XK_y ,spawn, SHCMD("pkill -9 mpv")},
     
+    /* Screenshots scripts */
     {MODKEY,   XK_Print, spawn, SHCMD("~/.config/rofi/scripts/screenshot.sh")},
     {0,   XK_Print, spawn, SHCMD("~/.scripts/shot-now")},
-    
+
+    /* XF86 Keybinding */
     {0, XF86AudioRaiseVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%+ unmute")},
     {0, XF86AudioLowerVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%- unmute")},
     {0, XF86AudioPlay,        spawn,   SHCMD("amixer -q -D pulse sset Master toggle")},

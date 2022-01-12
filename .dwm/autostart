@@ -3,7 +3,8 @@
 # add your autostart stuffs here
 
 # Add Background
-~/.scripts/wp &
+xwallpaper --zoom ~/.wallpapers/2.jpg &
+wal -r &
 
 # Set Layout to Latam
 setxkbmap latam &

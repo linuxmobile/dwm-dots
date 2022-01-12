@@ -70,10 +70,11 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 echo "### Installing Required Packages"
 paru -S python ffmpeg pulseaudio pulseaudio-alsa alsa-utils dunst xclip scrot     \
 thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m neovim   \
-viewnior mpv neofetch htop lxappearance picom-jonaburg-git rofi rsync pavucontrol \
+viewnior mpv neofetch htop lxappearance picom-jonaburg-fix rofi rsync pavucontrol \
 ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \
-exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop kitty wal-git imlib2   \
-xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs
+exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop wal-git imlib2         \
+xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs    \
+ueberzug
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌
@@ -101,14 +102,14 @@ _unimatrix|nvim|wal-script|ranger_
 ```sh 
 git clone https://github.com/linuxmobile/dwm-dots $HOME/dwm-dots/  
 cd $HOME/dwm-dots/
-rsync -avxHAXP --exclude '.git*' .* \~/  
+rsync -avxHAXP --exclude '.git*' .* ~/  
 ```
 
 ##### Agregamos los iconos
 
 ```sh
-pushd ~/.icons/ && \
-tar -xJf Papirus-Custom.tar.xz && tar -xJf Papirus-Dark-Custom.tar.xz && \
+pushd ~/.icons/ &&
+tar -xJf Papirus-Custom.tar.xz && tar -xJf Papirus-Dark-Custom.tar.xz &&
 sudo ln -vs ~/.icons/Papirus-Custom /usr/share/icons/
 sudo ln -vs ~/.icons/Papirus-Dark-Custom /usr/share/icons/
 rm -rf *.tar.xz
@@ -134,8 +135,8 @@ sudo make install
 
 ### Creditos
 
-_A la hermosa comunidad de_ [_r/unixporn_](https://www.reddit.com/r/unixporn)_._
+_A la hermosa comunidad de [r/unixporn](https://www.reddit.com/r/unixporn)._
 
-**_©_** _A todos los artistas que crearon los iconis, ilustraciones, y wallpapers._
+**©** _A todos los artistas que crearon los iconis, ilustraciones, y wallpapers._
 
-**_©_** _A cada uno que ha creado y mantiene los proyectos que he mencionado y utilizado anteriormente._
+**©** _A cada uno que ha creado y mantiene los proyectos que he mencionado y utilizado anteriormente._

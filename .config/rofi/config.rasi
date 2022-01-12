@@ -1,20 +1,16 @@
 configuration{
     modi: "drun,run,window,filebrowser";
-    lines: 5;
-    font: "Iosevka 12";
+    font: "CaskaydiaCove NF 12";
     show-icons: true;
     icon-theme: "Oranchelo";
-    terminal: "kitty";
+    terminal: "st";
     drun-display-format: "{icon} {name}";
     display-drun:         "";
     display-run:          "";
     display-window:       "";
-    display-file-browser: "";
-    display-calc:         "";
+    display-filebrowser: "";
     location: 0;
-    separator-style: "solid";
     disable-history: false;
-    hide-scrollbar: true;
 }
 
 @theme "/dev/null"

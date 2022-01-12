@@ -35,6 +35,7 @@ entry {
 
 listview {
   columns: 4;
+  list: 3;
   spacing: 5px;
   fixed-columns: true;
   background-color: transparent;

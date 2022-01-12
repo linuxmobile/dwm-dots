@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+# Bind this scrept with a keyboard shourtcut (eg. in i3 config file)
+
+# Options
+youtube="󰗃"
+music="󰝚"
+playlist="󰵀"
+
+chosen=$(printf '%s;%s;%s\n' "$youtube" "$music" "$playlist" \
+    | rofi -theme '.config/rofi/themes/youtubemenu.rasi' \
+           -dmenu \
+           -sep ';' \
+           -selected-row 1)
+
+case "$chosen" in
+    "$youtube")
+        ytfzf -fD
+    ;;
+
+    "$music")
+        ytfzf -Dms
+    ;;
+
+    "$playlist")
+        ytfzf -Dmr
+    ;;
+
+    *) exit 1 ;;
+esac

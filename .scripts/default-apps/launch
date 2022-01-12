@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+. "${HOME}/.owl4ce_var"
+
+R='\e[1;31m' M='\e[1;35m' W='\e[1;37m' NC='\e[0m' r='\e[0;31m'
+
+die() { >&2 printf "${R}%s${NC} %b\n" 'error:' "${@}"; exit 1; }
+
+run()
+{
+    printf "${W}USAGE:${NC}\n"
+    printf "${M}[${NC}X${M}]${NC} $(basename ${0})    [${r}apps${NC}]\n"
+    printf "${M}[${NC}?${M}]${NC} $(basename ${0}) -g [${r}apps${NC}]\n"
+    printf "\n${W}Available apps:${NC}\n"
+    for apps in $(cut -d\= -f1 "$DEFAPPS_FILE"); do
+        N="$((${N:-0}+1))"
+        printf "${M}[${NC}${N}${M}] ${r}${apps}\n"
+        eval "apps${N}=\$apps"
+    done; unset N
+    printf "\n${W}Will run:${NC}\n"
+    for wrun in $(cut -d\" -f2  "$DEFAPPS_FILE"); do
+        N="$((${N:-0}+1))"
+        printf "${M}[${NC}${N}${M}] ${r}${wrun}\n"
+        eval "wrun${N}=\$wrun"
+    done; unset N
+}
+
+case ${1} in
+    -g)    [ -n "$2" ] || exit 1
+           if grep -Fqo "${2}=" "$DEFAPPS_FILE"; then
+               exec grep -oP "${2}=\"\K[^\"]+" "$DEFAPPS_FILE"
+           else
+               die "${M}${2}${NC} isn't in the list. Define it first!"
+           fi
+    ;;
+    ''|-*) run
+    ;;
+    *)     if grep -Fqo "${1}=" "$DEFAPPS_FILE"; then
+               EXEC="$(grep -oP "${1}=\"\K[^\"]+" "$DEFAPPS_FILE")"
+               if [ -n "$2" ]; then
+                   exec $(${EXEC} $(tr ' ' '\ ' <<< "${@}") &>/dev/null &)
+               elif [ -n "$1" ]; then
+                   exec $(${EXEC} &>/dev/null &)
+               fi
+           else
+               die "${M}${1}${NC} isn't in the list. Define it first!"
+           fi
+    ;;
+esac
+
+exit ${?}

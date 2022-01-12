@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+# Options
+hdmi="󰡁"
+displayport="󰍹"
+kill="󰅙"
+
+chosen=$(printf '%s;%s;%s\n' "$hdmi" "$displayport" "$kill" \
+    | rofi -theme '.config/rofi/themes/monitormenu.rasi' \
+          -dmenu \
+          -sep ';' \
+        -selected-row 1)
+
+case "$chosen" in 
+    "$hdmi")
+        xrandr --output HDMI-A-1 --mode 1360x768 --right-of DisplayPort-0
+    ;;
+
+    "$displayport")
+      xrandr --output DisplayPort-0 --mode 1366x768 --primary \
+      xrandr --output HDMI-A-1 --off
+    ;;
+
+    "$kill")
+      xrandr --output HDMI-A-1 --off
+    ;;
+
+    *) exit 1 ;;
+esac

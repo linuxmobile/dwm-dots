@@ -5,9 +5,9 @@
 # https://github.com/owl4ce/dotfiles
 
 if [[ "$EUID" -eq 0 ]]; then
-    user_symbol="%F{1}%f"
+    user_symbol="%F{1}%f"
 else
-    user_symbol="%F{5}%f"
+    user_symbol="%F{5}%f"
 fi
 
 # Configuration

@@ -3,6 +3,7 @@
 #define XF86AudioRaiseVolume 0x1008ff13
 #define XF86AudioLowerVolume 0x1008ff11
 #define XF86AudioPlay 0x1008ff14
+#define XF86HomePage 0x1008ff18
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -58,7 +59,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {" ", " ", "  ", "  ", "阮 "};
+static char *tags[] = {"󰇩", "󰉋", "󰆍", "󰎞", "󰎄"};
 
 static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
                                   SchemeTag4, SchemeTag5,
@@ -118,32 +119,35 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c" ,  cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = {  "st", NULL }; // change this to your term
-static const char *rofi[] = {"rofi", "-show", "drun", NULL };
+/* static const char *rofi[] = {"rofi", "-show", "drun", NULL }; */
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,                       XK_c,      spawn,          {.v = rofi } },
-    { MODKEY,                       XK_z, spawn,          {.v = termcmd }},  
+    /*{ MODKEY,                       XK_c,      spawn,          {.v = rofi } }, */
+    { MODKEY,                       XK_z, spawn,          {.v = termcmd }},
+    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun")},
 
     /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
     /*{MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},*/
     
     /* kill picom */
     {MODKEY | ControlMask, XK_a, spawn, SHCMD("pkill -9 picom")},
-    
+    {MODKEY , XK_a, spawn, SHCMD("picom")},
+
     /* Rofi scripts */
     {MODKEY, XK_q, spawn, SHCMD("~/.config/rofi/scripts/powermenu.sh")},
     {MODKEY, XK_p, spawn, SHCMD("~/.scripts/monitor")},
+    {MODKEY, XK_v, spawn, SHCMD("~/.config/rofi/scripts/volume.sh")}, 
     {MODKEY, XK_r, spawn, SHCMD("~/.config/rofi/scripts/appsmenu.sh")},
 
     /* YTFZF scripts. Run script and quit killing mpv */
-    {MODKEY, XK_y, spawn, SHCMD("~/.scripts/youtube")},
+    {MODKEY, XK_y, spawn, SHCMD("youtube")},
     {MODKEY|ShiftMask, XK_y ,spawn, SHCMD("pkill -9 mpv")},
     
     /* Screenshots scripts */
@@ -154,6 +158,7 @@ static Key keys[] = {
     {0, XF86AudioRaiseVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%+ unmute")},
     {0, XF86AudioLowerVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%- unmute")},
     {0, XF86AudioPlay,        spawn,   SHCMD("amixer -q -D pulse sset Master toggle")},
+    {0, XF86HomePage, 	      spawn,   SHCMD("farge --notify")},
     
     
     { MODKEY,                       XK_b,      togglebar,      {0} },

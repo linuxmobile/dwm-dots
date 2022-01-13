@@ -5,10 +5,10 @@ configuration{
     icon-theme: "Oranchelo";
     terminal: "st";
     drun-display-format: "{icon} {name}";
-    display-drun:         "";
-    display-run:          "";
-    display-window:       "";
-    display-filebrowser: "";
+    display-drun:         "󰵆";
+    display-run:          "󰲋";
+    display-window:       "󱂬";
+    display-filebrowser: "󰉋";
     location: 0;
     disable-history: false;
 }
@@ -21,13 +21,13 @@ element-text, element-icon {
 }
 
 * {
-    dark-black: #1e2122;
-    bg-col:  #222526;
-    border-col: #282b2c;
-    selected-col: #282b2c;
-    blue: #8dae88;
-    fg-col: #d4be98;
-    fg-col2: #df736d;
+    dark-black: #15191f;
+    bg-col:  #181c22;
+    border-col: #181c22;
+    selected-col: #33aeff;
+    blue: #33aeff;
+    fg-col: #33aeff;
+    fg-col2: #ecf2f2;
     width: 600;
 }
 
@@ -89,5 +89,5 @@ element-icon {
 
 element selected {
     background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    text-color: @bg-col  ;
 }

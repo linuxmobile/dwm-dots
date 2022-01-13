@@ -8,7 +8,7 @@ playlist="󰵀"
 clipboard="$(xclip -o -selection clipboard)"
 
 chosen=$(printf '%s;%s;%s\n' "$youtube" "$music" "$playlist" \
-    | rofi -theme '.config/rofi/themes/youtubemenu.rasi' \
+    | rofi -theme '~/.config/rofi/themes/youtubemenu.rasi' \
            -dmenu \
            -sep ';' \
            -selected-row 1)
@@ -19,12 +19,10 @@ case "$chosen" in
     ;;
 
     "$music")
-        ytfzf -Dms
+        ~/.scripts/ytmusic 
     ;;
 
     "$playlist")
         ytfzf -Dmr $clipboard
     ;;
-
-    *) exit 1 ;;
 esac

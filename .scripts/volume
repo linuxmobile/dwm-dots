@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+# Options
+mute="󰝟"
+volumeup="󰝝"
+volumedown="󰝞"
+headphones="󰋋"
+speakers="󰓃"
+
+chosen=$(printf '%s;%s;%s;%s;%s\n' "$speakers" "$volumedown" "$mute" "$volumeup" "$headphones" \
+      rofi -theme '.config/rofi/themes/youtubemenu.rasi' \
+           -dmenu \
+           -sep ';' \
+          -selected-row 1)
+
+case "$chosen" in
+    "$speakers")
+        pactl set-sink-port 0 analog-output-lineout
+    ;;
+
+    "$volumedown")
+        amixer -q -D pulse sset Master 5%- unmute
+    ;;
+
+    "$mute")
+        amixer -q -D pulse sset Master toggle
+    ;;
+
+    "$volumeup")
+        amixer -q -D pulse sset Master 5%+ unmute
+    ;;
+
+    "$headphones")
+        pactl set-sink-port 0 analog-output-headphones
+    ;;
+
+    *) exit 1 ;;
+  esac

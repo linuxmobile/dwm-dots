@@ -16,8 +16,14 @@ export ZSH="${HOME}/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="lena"
+# ZSH_THEME="lena"
 # ZSH_THEME="lnxmbl"
+# ZSH_THEME="arch"
+ ZSH_THEME="skill"
+# ZSH_THEME="skull"
+# ZSH_THEME="theto"
+# ZSH_THEME="unicorn"
+
 
 # Set list of themes to pick from when loading at random.
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -163,5 +169,5 @@ wal -r
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
-export YTFZF_EXTMENU='rofi -dmenu -fuzzy -width 1000'
+export YTFZF_EXTMENU='rofi -theme '.config/rofi/themes/runcommand.rasi' -dmenu -fuzzy -width 1000'
 export YTFZF_ENABLE_FZF_DEFUALT_OPTS=0

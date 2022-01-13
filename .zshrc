@@ -169,5 +169,5 @@ wal -r
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
-export YTFZF_EXTMENU='rofi -theme '.config/rofi/themes/runcommand.rasi' -dmenu -fuzzy -width 1000'
+export YTFZF_EXTMENU='rofi -dmenu -fuzzy -width 1500'
 export YTFZF_ENABLE_FZF_DEFUALT_OPTS=0

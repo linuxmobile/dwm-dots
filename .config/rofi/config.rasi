@@ -27,7 +27,7 @@ element-text, element-icon {
     selected-col: #33aeff;
     blue: #33aeff;
     fg-col: #33aeff;
-    fg-col2: #ecf2f2;
+    fg-col2: #181c22;
     width: 600;
 }
 

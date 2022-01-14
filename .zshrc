@@ -141,13 +141,20 @@ alias cleanram="${PRIV} sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias yt="~/.scripts/yt-r"
 
 # ps_mem
-alias mem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|kitty|zsh|--'"
+alias mem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|zsh|---'"
+
 # Set wallpaper and Colors
 alias wp="~/.scripts/wp"
 alias monitor="~/.scripts/monset.sh"
 
 # Fachafetch
 alias rx="~/.scripts/rxfetch"
+
+# Fancy scripts
+alias block="~/.scripts/zsh/cl"
+alias color="~/.scripts/zsh/block ~/.scripts/zsh/blockify_conf"
+alias rain="~/.scripts/zsh/rain"
+alias topcmd="~/.scripts/zsh/tp"
 
 # Exa Settings
 alias ls="exa -lgh --icons --group-directories-first"

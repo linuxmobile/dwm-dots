@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Load Global Variable
-source $HOME/.linuchin_var
+source $HOME/.aether-corevar
 
 # Audio volume changer using alsa mixer
 

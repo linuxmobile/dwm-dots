@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+# Playlist selector for ytfzfim script. ¡Change as you want!
+
+# next time i will add a theme
+rofi_command="rofi"
+paste="$(xclip -o -selection clipboard)"
+# Options
+
+# list title
+lupowername="🔥 NOS VEMO EN DISNEY 🔥 "
+christname="⛪ Christian Chill ✨ Music 🥳"
+bestlofiname="🎸 Amazing LoFi. 🛌 Sleep, 📝 Study."
+randomname="🤯 Another Playlist. 🥳 Who can know this?"
+chillname="😻 Chill but Power 😻"
+
+
+
+# playlists
+lupower="https://music.youtube.com/playlist?list=PL_MhCZlhVKP3yEcYtNyELuB-f6JO7JIel"
+christ="https://music.youtube.com/playlist?list=PL_MhCZlhVKP3X3Lr7CgnnxUwDj0wCgE52"
+bestlofi="https://music.youtube.com/playlist?list=PLwvr71r_LHEXwKxel0_hECnTb75JHEwlf&feature=share"
+random="https://music.youtube.com/playlist?list=PL_MhCZlhVKP1j3e90u2F2kf8Y6nYpkY4d"
+chill="https://www.youtube.com/watch?v=JW248Cm3X5w&list=PLByyRb1vKaV3--oGlXxJAbxWZB8LnV8nk"
+
+options="$lupowername\n$christname\n$bestlofiname\n$randomname\n$chillname"
+
+chosen="$(echo -e "$options" | $rofi_command -dmenu -no-auto-select -selected-row 2)"
+case $chosen in
+    $lupowername)
+        echo -e "$lupower" | xclip -sel clip 
+        ;;
+    $christname)
+        echo -e "$christ" | xclip -sel clip
+        ;;
+    $bestlofiname)
+        echo -e "$bestlofi" | xclip -sel clip 
+        ;;
+    $randomname)
+        echo -e "$random" | xclip -sel clip
+        ;;
+    $chillname)
+        echo -e "$chill" | xclip -sel clip
+        ;;
+  esac
+
+  

@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+paste="$(xclip -o -selection clipboard)"
+copy="echo -e 'hello dear'"
+
+ytfzf -Dm $paste

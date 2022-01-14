@@ -10,9 +10,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-	bg:				#01131a;
-	fg:				#f5f0f1;
-	button:				#09181f;
+	bg:				#15191f;
+	fg:				#ecf2f2;
+	button:				#33aeff;
 
 	background-color:		@bg;
 	text-color:			@fg;
@@ -32,7 +32,7 @@ prompt { enabled: false; }
 entry {
 	placeholder:			"Search";
 	expand:                         true;
-	background-color:               @button;
+	background-color:               @bg;
         placeholder-color:              @fg;
 	border-radius:			10px;
 	vertical-align:			0.5;
@@ -80,6 +80,6 @@ element-text {
 
 element selected {
 	background-color:               @button;
-	text-color:                     @fg;
+	text-color:                     @bg;
 	border-radius:                  6px;
 }

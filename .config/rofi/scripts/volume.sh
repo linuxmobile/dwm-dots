@@ -21,13 +21,13 @@ case $chosen in
         pactl set-sink-port 0 analog-output-lineout
         ;;
     $volumedown)
-        amixer -q -D pulse sset Master 5%- unmute
+        ~/.scripts/notify/change-volume down
         ;;
     $mute)
-        amixer -q -D pulse sset Master toggle
+        ~/.scripts/notify/change-volume mute
         ;;
     $volumeup)
-        amixer -q -D pulse sset Master 5%+ unmute
+        ~/.scripts/notify/change-volume up
         ;;
     $headphones)
         pactl set-sink-port 0 analog-output-headphones

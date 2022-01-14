@@ -131,7 +131,7 @@ static Key keys[] = {
     /* modifier                     key        function        argument */
     /*{ MODKEY,                       XK_c,      spawn,          {.v = rofi } }, */
     { MODKEY,                       XK_z, spawn,          {.v = termcmd }},
-    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun")},
+    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun -theme ~/.config/rofi/themes/launcher.rasi")},
 
     /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
     /*{MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},*/

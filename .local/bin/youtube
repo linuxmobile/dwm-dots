@@ -23,6 +23,7 @@ case "$chosen" in
     ;;
 
     "$playlist")
-        ytfzf -Dmr $clipboard
+        ~/.scripts/playlist
+        ~/.scripts/playlist-run
     ;;
 esac

@@ -13,7 +13,7 @@ setxkbmap latam &
 xset -dpms s off &
 
 # Notify
-dunst &
+dunst -config ~/.config/dunst/dunstrc-dark-left &
 
 # Clipboard
 xclip &

@@ -3,7 +3,7 @@
 # add your autostart stuffs here
 
 # Add Background
-xwallpaper --zoom ~/.wallpapers/2.jpg &
+xwallpaper --zoom ~/.wallpapers/4.jpg &
 wal -r &
 
 # Set Layout to Latam
@@ -24,3 +24,6 @@ picom &
 # run bar script and dwm ( do not remove this )
 ~/.dwm/bar/./bar.sh &
 dwm
+
+# Nice hello! script
+sh "${HOME}/.local/bin/hello.sh"

@@ -104,13 +104,13 @@ _Algunas de las configuraciones que pueden ubicar en mis dotfiles_
     <img width="300px" style="padding: 0 10px;" src=".misc/thunar.png"/>
   </a>
   <a>
-  <img width="300px" style="padding: 0 10px;" src=".misc/nvim.png"/>
+  <img width="300px" style="padding: 0 10px;" src=".misc/monitor.png"/>
   </a>
   <a>
   <img width="300px" style="padding: 0 10px;" src=".misc/neofetch.png"/>
   </a>
   <a>
-  <img width="300px" style="padding: 0 10px;" src=".misc/monitor.png"/>
+  <img width="300px" style="padding: 0 10px;" src=".misc/nvim.png"/>
   </a>
 </p>
 

@@ -33,7 +33,7 @@
 
 ## Este es mi actual desktop
 
-<img src='.misc/2022.01.07-00.20.49.screenrec.gif'>
+<img src='.misc/vid.gif'>
 
 ## 🌸 Setup
 

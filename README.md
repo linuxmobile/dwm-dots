@@ -92,25 +92,25 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 _Algunas de las configuraciones que pueden ubicar en mis dotfiles_
 <p align="center">
   <a>
-    <img width="200px" style="padding: 0 10px;" src=".misc/youtube.png"/>
+    <img width="300px" style="padding: 0 10px;" src=".misc/youtube.png"/>
   </a>
   <a>
-    <img width="200px" style="padding: 0 10px;" src=".misc/playlist.png"/>
+    <img width="300px" style="padding: 0 10px;" src=".misc/playlist.png"/>
   </a>
   <a>
-    <img width="200px" style="padding: 0 10px;" src=".misc/rofi.png"/>
+    <img width="300px" style="padding: 0 10px;" src=".misc/rofi.png"/>
   </a>
   <a>
-    <img width="200px" style="padding: 0 10px;" src=".misc/thunar.png"/>
+    <img width="300px" style="padding: 0 10px;" src=".misc/thunar.png"/>
   </a>
   <a>
-  <img width="200px" style="padding: 0 10px;" src=".misc/nvim.png"/>
+  <img width="300px" style="padding: 0 10px;" src=".misc/nvim.png"/>
   </a>
   <a>
-  <img width="200px" style="padding: 0 10px;" src=".misc/neofetch.png"/>
+  <img width="300px" style="padding: 0 10px;" src=".misc/neofetch.png"/>
   </a>
   <a>
-  <img width="200px" style="padding: 0 10px;" src=".misc/monitor.png"/>
+  <img width="300px" style="padding: 0 10px;" src=".misc/monitor.png"/>
   </a>
 </p>
 

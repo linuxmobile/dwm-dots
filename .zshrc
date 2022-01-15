@@ -156,8 +156,26 @@ alias pacrem="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro su
 # Search btw installed packages
 alias p="pacman -Q | fzf"
 
+# Check aur comments
+alias parucom="paru -Gc"
+
+# Check aur updates
+alias parupd="paru -Qua"
+
+# Check pkgbuild
+alias parucheck="paru -Gp"
+
+# Clean Orphan packages
+alias cleanpac='sudo pacman -Rns $(pacman -Qtdq); paru -c'
+
+# Check Apps eating cpu 
+alias cpu="ps axch -o cmd:15,%cpu --sort=-%cpu | head"
+
+# Check Apps eating mem
+alias mem="ps axch -o cmd:15,%mem --sort=-%mem | head"
+
 # ps_mem
-alias mem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|zsh|---'"
+alias psmem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|zsh|---'"
 
 # Set wallpaper and Colors
 alias wp="~/.scripts/wp"

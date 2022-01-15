@@ -149,12 +149,18 @@ alias yt="~/.scripts/yt-r"
 # Telegram Cli
 alias tg="arigram"
 
+# Regenerate grub
+alias mkgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 # Search and install packages
-alias pac="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk \"{print \$2}\")' | xargs -ro sudo pacman -S"
+alias pacin="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk \"{print \$2}\")' | xargs -ro sudo pacman -S"
+
+# Search and install packages grom aur
+alias paruin="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro  paru -S"
 # Search and remove packages
 alias pacrem="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 # Search btw installed packages
-alias p="pacman -Q | fzf"
+alias pac="pacman -Q | fzf"
 
 # Check aur comments
 alias parucom="paru -Gc"

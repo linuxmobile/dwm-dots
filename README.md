@@ -74,7 +74,7 @@ viewnior mpv neofetch htop lxappearance picom-jonaburg-fix rofi rsync pavucontro
 ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \
 exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop wal-git imlib2         \
 xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs    \
-ueberzug
+ueberzug farge-git
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌
@@ -89,12 +89,30 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 
 #### Ahora procedemos a Clonar y copiar los Dotfiles
 
-_unimatrix|ranger|htop|rxfetch_
-<img src='.misc/unimatrix.png'>
-_htop|nvim|cava|ranger_
-<img src='.misc/nvim.png'>
-_unimatrix|nvim|wal-script|ranger_
-<img src='.misc/wall-script.png'>
+_Algunas de las configuraciones que pueden ubicar en mis dotfiles_
+<p align="center">
+  <a>
+    <img width="200px" style="padding: 0 10px;" src=".misc/youtube.png"/>
+  </a>
+  <a>
+    <img width="200px" style="padding: 0 10px;" src=".misc/playlist.png"/>
+  </a>
+  <a>
+    <img width="200px" style="padding: 0 10px;" src=".misc/rofi.png"/>
+  </a>
+  <a>
+    <img width="200px" style="padding: 0 10px;" src=".misc/thunar.png"/>
+  </a>
+  <a>
+  <img width="200px" style="padding: 0 10px;" src=".misc/nvim.png"/>
+  </a>
+  <a>
+  <img width="200px" style="padding: 0 10px;" src=".misc/neofetch.png"/>
+  </a>
+  <a>
+  <img width="200px" style="padding: 0 10px;" src=".misc/monitor.png"/>
+  </a>
+</p>
 
 
 ##### Clonamos y Copiamos
@@ -108,12 +126,12 @@ rsync -avxHAXP --exclude '.git*' .* ~/
 ##### Agregamos los iconos
 
 ```sh
-pushd ~/.icons/ &&
-tar -xJf Papirus-Custom.tar.xz && tar -xJf Papirus-Dark-Custom.tar.xz &&
-sudo ln -vs ~/.icons/Papirus-Custom /usr/share/icons/
-sudo ln -vs ~/.icons/Papirus-Dark-Custom /usr/share/icons/
+pushd ~/.icons/ && \
+tar -xJf oomox-aesthetic-light.tar.xz && tar -xJf oomox-aesthetic-dark.tar.xz && \
+sudo ln -vs ~/.icons/oomox-aesthetic-dark /usr/share/icons/
+sudo ln -vs ~/.icons/oomox-aesthetic-light /usr/share/icons/
 rm -rf *.tar.xz
-popd  
+popd 
 ```
 
 ##### Por último actualizamos las fuentes

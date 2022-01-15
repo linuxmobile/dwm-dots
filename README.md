@@ -23,7 +23,7 @@
 
 * **Window Manager** • [DWM ](https://github.com/siduck/chadwm)🎨 Tiles Everywhere!
 * **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
-* **Terminal** • [Kitty ](https://github.com/kovidgoyal/kitty) 💻 Una terminal que soporta imagenes!
+* **Terminal** • [ST ](https://github.com/siduck/st) 💻 Una terminal muy poderosa y con soporte a imagenes!
 * **Panel** • [dwm-bar ](https://github.com/siduck/chadwm)🍧 Sencilla, sin lujos!
 * **Compositor** • [Picom ](https://github.com/yshui/picom) 🍩 rounded corners y mucho BLUR!
 * **Notify Daemon** • [Dunst ](https://github.com/dunst-project/dunst) 🍃 minimalista!
@@ -42,7 +42,7 @@ Como suelen decir en la comunidad de linux. Solamente [R.T.F.M](https://en.wikip
 
 ### Instalación (dependencias y paquetes)
 
-    Primero que nada un breve "disclaimer". Esta configuración es la que estoy utilizando actualmente. Está pensado para funcionar en Archlinux, y para dejar el escritorio tal cual lo tengo yo. Por lo tanto, si estás utilizando otra distribución vas a tener que instalar las dependencias en base a ello. Así que si no utilizas Archlinux, no deberías copiar y pegar.
+    Primero que nada un breve "disclaimer". Esta configuración es la que estoy utilizando actualmente. Está pensado para funcionar en Archlinux, y para dejar el escritorio tal cual lo tengo yo. Por lo tanto, si estás utilizando otra distribución vas a tener que instalar las dependencias en base a ello. Así que si no utilizas Archlinux, no te recomiendo copiar y pegar.
 
 #### Instalando Paru como AUR Helper 🆘
 
@@ -150,11 +150,25 @@ cd $HOME/dwm-dots/lnxdwm/
 sudo make install
 ```
 
+### ST terminal 🔥
+```sh
+cd $HOME/st/
+sudo make install
+```
+
 
 ### Creditos
 
 _A la hermosa comunidad de [r/unixporn](https://www.reddit.com/r/unixporn)._
 
-**©** _A todos los artistas que crearon los iconis, ilustraciones, y wallpapers._
+**©** _A todos los artistas que crearon los iconos, ilustraciones, y wallpapers._
 
 **©** _A cada uno que ha creado y mantiene los proyectos que he mencionado y utilizado anteriormente._
+
+---
+
+
+© [Owl4ce](https://github.com/owl4ce)
+© [Ilham25](https://github.com/ilham25)
+© [Siduck](https://github.com/siduck)
+© [NvChad](https://github.com/NvChad) 

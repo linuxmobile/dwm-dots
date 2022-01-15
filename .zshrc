@@ -1,3 +1,17 @@
+#--------------------------------------------------------------------------------
+#	▒███████▒  ██████  ██░ ██     ▄████▄   ▒█████   ███▄    █   █████▒██▓  ▄████ 
+#	▒ ▒ ▒ ▄▀░▒██    ▒ ▓██░ ██▒   ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ ▓██   ▒▓██▒ ██▒ ▀█▒
+#	░ ▒ ▄▀▒░ ░ ▓██▄   ▒██▀▀██░   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒▒████ ░▒██▒▒██░▄▄▄░
+#	  ▄▀▒   ░  ▒   ██▒░▓█ ░██    ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒░▓█▒  ░░██░░▓█  ██▓
+#	▒███████▒▒██████▒▒░▓█▒░██▓   ▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░░▒█░   ░██░░▒▓███▀▒
+#	░▒▒ ▓░▒░▒▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒   ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒ ░   ░▓   ░▒   ▒ 
+#	░░▒ ▒ ░ ▒░ ░▒  ░ ░ ▒ ░▒░ ░     ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░ ░      ▒ ░  ░   ░ 
+#	░ ░ ░ ░ ░░  ░  ░   ░  ░░ ░   ░        ░ ░ ░ ▒     ░   ░ ░  ░ ░    ▒ ░░ ░   ░ 
+#	  ░ ░          ░   ░  ░  ░   ░ ░          ░ ░           ░         ░        ░ 
+#	░                            ░                                               
+#-----------------------------By: @linuxmobile-----------------------------------
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -16,14 +30,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-# ZSH_THEME="lena"
-# ZSH_THEME="lnxmbl"
-# ZSH_THEME="arch"
  ZSH_THEME="skill"
-# ZSH_THEME="skull"
-# ZSH_THEME="theto"
-# ZSH_THEME="unicorn"
-
 
 # Set list of themes to pick from when loading at random.
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,12 +125,12 @@ zstyle :bracketed-paste-magic paste-finish paste_done
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Aliases
+
+###############################
+# ****** ALIAS SECTION ****** #
+###############################
+
+# For full list of aliases: Run 'alias'
 
 PRIV="$(command -v doas || command -v sudo)"
 
@@ -139,6 +146,15 @@ alias cleanram="${PRIV} sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 # YT music
 alias yt="~/.scripts/yt-r"
+# Telegram Cli
+alias tg="arigram"
+
+# Search and install packages
+alias pac="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk \"{print \$2}\")' | xargs -ro sudo pacman -S"
+# Search and remove packages
+alias pacrem="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+# Search btw installed packages
+alias p="pacman -Q | fzf"
 
 # ps_mem
 alias mem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|zsh|---'"

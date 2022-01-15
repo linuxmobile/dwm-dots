@@ -74,7 +74,7 @@ viewnior mpv neofetch htop lxappearance picom-jonaburg-fix rofi rsync pavucontro
 ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper    \
 exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop wal-git imlib2         \
 xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs    \
-ueberzug farge-git
+ueberzug farge-git pacman-contrib
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌

@@ -168,6 +168,9 @@ alias parucom="paru -Gc"
 # Check aur updates
 alias parupd="paru -Qua"
 
+#Check pacman updates
+alias pacupd="pacman -Qu"
+
 # Check pkgbuild
 alias parucheck="paru -Gp"
 

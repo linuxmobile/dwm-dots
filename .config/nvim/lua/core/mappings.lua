@@ -32,6 +32,9 @@ M.misc = function()
 
       -- center cursor when moving (goto_definition)
 
+      -- linuxmobile mapping
+      map("n", "q", ':quit <CR>', opt)
+
       -- yank from current cursor to end of line
       map("n", "Y", "yg$")
    end

@@ -17,6 +17,11 @@ return packer.startup(function()
    use "nvim-lua/plenary.nvim"
 
    use {
+      "sidebar-nvim/sidebar.nvim",
+      branch = "dev",
+   }
+
+   use {
       "wbthomason/packer.nvim",
       event = "VimEnter",
    }

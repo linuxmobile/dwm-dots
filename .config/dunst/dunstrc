@@ -3,7 +3,7 @@ title = Dunst
 class = Dunst
 monitor = 0
 follow = mouse
-geometry = "350x6-24+56"
+geometry = "350x6+24+60"
 indicate_hidden = yes
 shrink = yes
 
@@ -12,8 +12,8 @@ separator_height = 2
 padding = 8
 horizontal_padding = 11
 frame_width = 6
-frame_color = "#3b4252"
-separator_color = "#404859"
+frame_color = "#21252B"
+separator_color = "#51cdff"
 
 font = mplus nerd font 10
 
@@ -39,7 +39,7 @@ max_icon_size = 80
 
 icon_path = /usr/share/icons/Papirus-Dark-Custom/48x48/actions/:/usr/share/icons/Papirus-Dark-Custom/48x48/apps/:/usr/share/icons/Papirus-Dark-Custom/48x48/devices/:/usr/share/icons/Papirus-Dark-Custom/48x48/emblems/:/usr/share/icons/Papirus-Dark-Custom/48x48/emotes/:/usr/share/icons/Papirus-Dark-Custom/48x48/mimetypes/:/usr/share/icons/Papirus-Dark-Custom/48x48/places/:/usr/share/icons/Papirus-Dark-Custom/48x48/status/
 
-browser = google-chrome-stable
+browser = microsoft-edge
 
 mouse_left_click = close_current
 mouse_middle_click = do_action
@@ -53,15 +53,15 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 3
-background = "#3b4252"
+background = "#21252B"
 foreground = "#f9f9f9"
 
 [urgency_normal]
 timeout = 6
-background = "#3b4252"
+background = "#21252B"
 foreground = "#f9f9f9"
 
 [urgency_critical]
 timeout = 0
-background = "#3b4252"
+background = "#21252B"
 foreground = "#f9f9f9"

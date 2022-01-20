@@ -59,7 +59,7 @@ M.plugins = {
    status = {
       blankline = true, -- indentline stuff
       bufferline = true, -- manage and preview opened buffers
-      colorizer = true, -- color RGB, HEX, CSS, NAME color codes
+      colorizer = false, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
       dashboard = false,
       better_escape = true, -- map to <ESC> with no lag
@@ -72,7 +72,13 @@ M.plugins = {
       autopairs = true,
    },
    options = {
+      packer = {
+         init_file = "plugins.packerInit",
+      },
       autopairs = { loadAfter = "nvim-cmp" },
+      cmp = {
+         lazy_load = true,
+      },
       lspconfig = {
          setup_lspconf = "", -- path of file containing setups of different lsps
       },

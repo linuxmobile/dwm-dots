@@ -17,7 +17,7 @@ M.options = {
 
 -- ui configs
 M.ui = {
-  theme = "tokyonight",
+  theme = "onenord",
   transparency = true,
 }
 

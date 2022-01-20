@@ -145,6 +145,7 @@ static Key keys[] = {
     {MODKEY, XK_p, spawn, SHCMD("~/.scripts/monitor")},
     {MODKEY, XK_v, spawn, SHCMD("~/.config/rofi/scripts/volume.sh")}, 
     {MODKEY, XK_r, spawn, SHCMD("~/.config/rofi/scripts/appsmenu.sh")},
+    {MODKEY, XK_o, spawn, SHCMD("rofi -show emoji -modi emoji")},
 
     /* YTFZF scripts. Run script and quit killing mpv */
     {MODKEY, XK_y, spawn, SHCMD("youtube")},
@@ -152,12 +153,12 @@ static Key keys[] = {
     
     /* Screenshots scripts */
     {MODKEY,   XK_Print, spawn, SHCMD("~/.config/rofi/scripts/screenshot.sh")},
-    {0,   XK_Print, spawn, SHCMD("~/.scripts/shot-now")},
+    {0,   XK_Print, spawn, SHCMD("~/.scripts/screenshot-screen.sh")},
 
     /* XF86 Keybinding */
-    {0, XF86AudioRaiseVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%+ unmute")},
-    {0, XF86AudioLowerVolume, spawn,   SHCMD("amixer -q -D pulse sset Master 5%- unmute")},
-    {0, XF86AudioPlay,        spawn,   SHCMD("amixer -q -D pulse sset Master toggle")},
+    {0, XF86AudioRaiseVolume, spawn,   SHCMD("~/.scripts/notify/change-volume up")},
+    {0, XF86AudioLowerVolume, spawn,   SHCMD("~/.scripts/notify/change-volume down")},
+    {0, XF86AudioPlay,        spawn,   SHCMD("~/.scripts/notify/change-volume mute")},
     {0, XF86HomePage, 	      spawn,   SHCMD("farge --notify")},
     
     

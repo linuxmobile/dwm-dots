@@ -23,7 +23,7 @@ picom &
 
 # run bar script and dwm ( do not remove this )
 ~/.dwm/bar/./bar.sh &
-dwm
+dwm &
 
 # Nice hello! script
-sh "${HOME}/.local/bin/hello.sh"
+sleep 3 && ~/.local/bin/hello.sh

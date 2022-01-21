@@ -38,7 +38,7 @@ static const char dmenufont[]       = "NotoSans Nerd Font:style=Medium:size=8";
 static const int colorfultag        = 1;  /* 0 means use SchemeSel for selected non vacant tag */
 
 // theme
-#include "themes/onedark.h"
+#include "themes/catppuccin.h"
 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
@@ -131,7 +131,7 @@ static Key keys[] = {
     /* modifier                     key        function        argument */
     /*{ MODKEY,                       XK_c,      spawn,          {.v = rofi } }, */
     { MODKEY,                       XK_z, spawn,          {.v = termcmd }},
-    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun -theme ~/.config/rofi/themes/launcher.rasi")},
+    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun")},
 
     /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
     /*{MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},*/

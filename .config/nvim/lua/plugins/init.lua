@@ -13,6 +13,12 @@ return packer.startup(function()
    -- this is arranged on the basis of when a plugin starts
 
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
+
+   use{
+	"catppuccin/nvim",
+	as = "catppuccin"
+      }
+
    use "Nvchad/extensions"
    use "nvim-lua/plenary.nvim"
 
@@ -215,6 +221,7 @@ return packer.startup(function()
 
    use {
       "nvim-telescope/telescope.nvim",
+      module = "telescope",
       cmd = "Telescope",
       config = override_req("telescope", "plugins.configs.telescope"),
       setup = function()

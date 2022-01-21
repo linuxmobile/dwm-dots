@@ -1,15 +1,15 @@
 * {
-  bg: #15191f;
-  bg-semilight: #181C22;
-  bg-light: #21252b;
-  fg: #ecf2f2;
-  red: #FF598B;
-  wifi-accent: #FF598B;
-  blue: #33AEFF;
-  green: #1FE0A6;
-  bg-hover: #33AEFF;
-  fg-hover: #15191f;
-  fg-unhover: #33AEFF;
+  bg: #1A1826;
+  bg-semilight: #1E1E2E;
+  bg-light: #302D41;
+  fg: #D9E0EE;
+  red: #E38C8F;
+  wifi-accent: #E38C8F;
+  blue: #A4B9EF;
+  green: #B1E3AD;
+  bg-hover: #A4B9EF;
+  fg-hover: #1E1E2E;
+  fg-unhover: #A4B9EF;
   network-header: url("assets/dark/network-header.png", height);
   launcher-header: url("assets/dark/launcher-header.png", height);
 }

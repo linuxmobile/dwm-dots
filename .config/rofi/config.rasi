@@ -1,38 +1,25 @@
 configuration{
-    modi: "drun,run,window,filebrowser";
-    font: "CaskaydiaCove NF 12";
+    modi: "run,drun,window";
+    lines: 5;
+    font: "CaskaydiaCove Nerd Font 12";
     show-icons: true;
-    icon-theme: "Oranchelo";
+    icon-theme: "Nordzy";
     terminal: "st";
     drun-display-format: "{icon} {name}";
-    display-drun:         "󰵆";
-    display-run:          "󰲋";
-    display-window:       "󱂬";
-    display-filebrowser: "󰉋";
     location: 0;
     disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
 }
 
-@theme "/dev/null"
+@theme "catppuccin"
 
-element-text, element-icon {
+element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
 }
 
-* {
-    dark-black: #15191f;
-    bg-col:  #181c22;
-    border-col: #181c22;
-    selected-col: #33aeff;
-    blue: #33aeff;
-    fg-col: #33aeff;
-    fg-col2: #181c22;
-    width: 600;
-}
-
 window {
-    padding: 20px;
     height: 360px;
     border: 3px;
     border-color: @border-col;
@@ -40,8 +27,6 @@ window {
 }
 
 mainbox {
-    padding: 5px;
-    border-radius: 13px;
     background-color: @bg-col;
 }
 
@@ -54,9 +39,10 @@ inputbar {
 
 prompt {
     background-color: @blue;
-    padding: 5px 5px 0px;
+    padding: 6px;
     text-color: @bg-col;
     border-radius: 3px;
+    margin: 20px 0px 0px 20px;
 }
 
 textbox-prompt-colon {
@@ -66,6 +52,7 @@ textbox-prompt-colon {
 
 entry {
     padding: 6px;
+    margin: 20px 0px 0px 10px;
     text-color: @fg-col;
     background-color: @bg-col;
 }
@@ -73,6 +60,7 @@ entry {
 listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
     columns: 2;
     background-color: @bg-col;
 }
@@ -89,5 +77,22 @@ element-icon {
 
 element selected {
     background-color:  @selected-col ;
-    text-color: @bg-col  ;
+    text-color: @fg-col2  ;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
 }

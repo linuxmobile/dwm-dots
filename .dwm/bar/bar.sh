@@ -6,12 +6,12 @@
 interval=0
 
 # load colors!
-. ~/.dwm/bar/themes/cyber
+. ~/.dwm/bar/themes/catppuccin
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
 
-  printf "^c$black^ ^b$pink^ CPU"
+  printf "^c$black^ ^b$green^ CPU"
   printf "^c$white^ ^b$grey^ $cpu_val"
 }
 
@@ -33,8 +33,8 @@ battery() {
 }
 
 mem() {
-  printf "^c$yellow^^b$black^  "
-  printf "^c$yellow^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c$blue^^b$black^  "
+  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 network() {
@@ -43,15 +43,15 @@ network() {
   PRIVATE=$(nmcli -a | grep 'inet4 192' | awk '{print $2}')
 
   if [ "$CONNAME" = "" ]; then # we don't have a connection
-    printf "^c$black^ ^b$red^ 📡 ^d^%s" " ^c$white^Disconnected"
+    printf "^c$black^ ^b$blue^ 📡 ^d^%s" " ^c$blue^Disconnected"
   else # we have a connection
-    printf "^c$black^ ^b$green^ 📡 ^d^%s" " ^c$white^${CONNAME} ${PRIVATE}"
+    printf "^c$black^ ^b$blue^ 📡 ^d^%s" " ^c$blue^${CONNAME} ${PRIVATE}"
   fi
 }
 
 clock() {
-  printf "^c$black^ ^b$darkblue^ 🕛 "
-  printf "^c$black^^b$blue^ $(date '+%a %I:%M %p') "
+  printf "^c$black^ ^b$darkblue^ 󱑆 "
+  printf "^c$black^^b$blue^ $(date '+%a %H:%M') "
 }
 
 while true; do

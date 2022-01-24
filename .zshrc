@@ -154,7 +154,6 @@ alias mkgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Search and install packages
 alias pacin="pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk \"{print \$2}\")' | xargs -ro sudo pacman -S"
-
 # Search and install packages grom aur
 alias paruin="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro  paru -S"
 # Search and remove packages
@@ -211,10 +210,6 @@ export GPG_TTY="$(tty)"
 
 # Bat Theme
 export BAT_THEME="base16"
-
-# Reset colorscheme
-wal -r
-
 
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim

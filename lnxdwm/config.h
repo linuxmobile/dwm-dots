@@ -5,6 +5,7 @@
 #define XF86AudioPlay 0x1008ff14
 #define XF86HomePage 0x1008ff18
 
+
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int default_border = 0;  // to switch back to default border after dynamic border resizing via keybinds

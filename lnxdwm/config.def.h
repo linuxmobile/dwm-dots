@@ -1,7 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
-#define XF86MonBrightnessDown 0x1008ff03
-#define XF86MonBrightnessUp 0x1008ff02
+#define XF86AudioRaiseVolume 0x1008ff13
+#define XF86AudioLowerVolume 0x1008ff11
+#define XF86AudioPlay 0x1008ff14
+#define XF86HomePage 0x1008ff18
+
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -32,11 +35,11 @@ static       int tag_preview        = 0;        /* 1 means enable, 0 is off */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:medium:size=10",
                                         "Material Design Icons-Regular:size=10",
                                       };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "NotoSans Nerd Font:style=Medium:size=8";
 static const int colorfultag        = 1;  /* 0 means use SchemeSel for selected non vacant tag */
 
 // theme
-#include "themes/onedark.h"
+#include "themes/catppuccin.h"
 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
@@ -57,10 +60,10 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {" ", " ", " ", " ", " "};
+static char *tags[] = {"󰇩", "󰉋", "󰆍", "󰎞", "󰎄"};
 
 static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
-                                  SchemeTag4, SchemeTag5
+                                  SchemeTag4, SchemeTag5,
                                 };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
@@ -76,6 +79,7 @@ static const Rule rules[] = {
        	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+	{ "Viewnior", NULL,       NULL,       0,            0,           1,           -1 },
       	{ "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
 
@@ -116,25 +120,49 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c" ,  cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = {  "st", NULL }; // change this to your term
-static const char *rofi[] = {"rofi", "-show", "drun", NULL };
-static const char *xi[] = {"xbacklight", "-inc", "7", NULL};
-static const char *xd[] = {"xbacklight", "-dec", "7", NULL};
+/* static const char *rofi[] = {"rofi", "-show", "drun", NULL }; */
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,                       XK_c,      spawn,          {.v = rofi } },
-    { MODKEY,                       XK_Return, spawn,          {.v = termcmd }},  
+    /*{ MODKEY,                       XK_c,      spawn,          {.v = rofi } }, */
+    { MODKEY,                       XK_z, spawn,          {.v = termcmd }},
+    { MODKEY, XK_c, spawn, SHCMD("rofi -show drun")},
 
-    {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-    {0, XF86MonBrightnessDown, spawn, {.v = xd}},
-    {0, XF86MonBrightnessUp, spawn, {.v = xi}},
+    /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
+    /*{MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},*/
+    
+    /* kill picom */
+    {MODKEY | ControlMask, XK_a, spawn, SHCMD("pkill -9 picom")},
+    {MODKEY , XK_a, spawn, SHCMD("picom")},
+
+    /* Rofi scripts */
+    {MODKEY, XK_q, spawn, SHCMD("~/.config/rofi/scripts/powermenu.sh")},
+    {MODKEY, XK_p, spawn, SHCMD("~/.scripts/monitor")},
+    {MODKEY, XK_v, spawn, SHCMD("~/.config/rofi/scripts/volume.sh")}, 
+    {MODKEY, XK_r, spawn, SHCMD("~/.config/rofi/scripts/appsmenu.sh")},
+    {MODKEY, XK_o, spawn, SHCMD("rofi -show emoji -modi emoji")},
+
+    /* YTFZF scripts. Run script and quit killing mpv */
+    {MODKEY, XK_y, spawn, SHCMD("youtube")},
+    {MODKEY|ShiftMask, XK_y ,spawn, SHCMD("pkill -9 mpv")},
+    
+    /* Screenshots scripts */
+    {MODKEY,   XK_Print, spawn, SHCMD("~/.config/rofi/scripts/screenshot.sh")},
+    {0,   XK_Print, spawn, SHCMD("~/.scripts/screenshot-screen.sh")},
+
+    /* XF86 Keybinding */
+    {0, XF86AudioRaiseVolume, spawn,   SHCMD("~/.scripts/notify/change-volume up")},
+    {0, XF86AudioLowerVolume, spawn,   SHCMD("~/.scripts/notify/change-volume down")},
+    {0, XF86AudioPlay,        spawn,   SHCMD("~/.scripts/notify/change-volume mute")},
+    {0, XF86HomePage, 	      spawn,   SHCMD("farge --notify")},
+    
+    
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY|ControlMask,                       XK_w,      tabmode,        { -1 } },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -175,7 +203,7 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_t,      togglegaps,     {0} },
     { MODKEY|ControlMask|ShiftMask,             XK_d,      defaultgaps,    {0} },
 
-    { MODKEY,                       XK_q,      killclient,     {0} },
+    { MODKEY,                       XK_x,      killclient,     {0} },
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -237,8 +265,7 @@ static Button buttons[] = {
 		 * into a floating position).
 		 */
 		{ ClkClientWin,         MODKEY,         Button1,        moveorplace,    {.i = 0} },
-    { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+    { ClkClientWin,         MODKEY,         Button3,        resizemouse,     {0} },
     { ClkClientWin,         ControlMask,    Button1,        dragmfact,      {0} },
     { ClkClientWin,         ControlMask,    Button3,        dragcfact,      {0} },
     { ClkTagBar,            0,              Button1,        view,           {0} },

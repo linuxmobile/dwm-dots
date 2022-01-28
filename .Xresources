@@ -1,3 +1,19 @@
+!-- Xft settings -- ! you dont even need this probably 
+
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+! transparency ( 0.1 to 0.9 values)
+st.alpha: 0.8 
+
+! inner padding
+st.borderpx:          15
+st.font:        CaskaydiaCove Nerd Font Mono :pixelsize=15:antialias=true:autohint=true 
+
 *background: #1E1E28
 *foreground: #DADAE8
 

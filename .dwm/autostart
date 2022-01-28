@@ -21,7 +21,7 @@ dunst -config ~/.config/dunst/dunstrc-dark-left &
 xclip &
 
 # Run compositor
-picom &
+# picom &
 
 # run bar script and dwm ( do not remove this )
 ~/.dwm/bar/./bar.sh &

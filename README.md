@@ -68,13 +68,13 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ```sh
 echo "### Installing Required Packages"
-paru -S python ffmpeg pulseaudio pulseaudio-alsa alsa-utils dunst xclip scrot      \
+paru -S python ffmpeg pipewire pipewire-alsa pipewire-pulse alsa-utils dunst       \
 thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m neovim    \
 viewnior mpv htop lxappearance picom-jonaburg-fix rofi rsync pavucontrol farge-git \
-ranger python-pip noto-fonts-emoji noto-fonts-cjk python-pillow-git xwallpaper     \
-exa bat file-roller geany geany-plugins gvfs gvfs-mtp htop wal-git imlib2          \
-xorg-xsetroot simplescreenrecorder ytfzfim cava ps_mem unimatrix xdg-user-dirs     \
-ueberzug pacman-contrib catppuccin-gtk-theme fzf imlib2
+ranger python-pip noto-fonts-emoji noto-fonts-cjk xwallpaper scrot imlib2 fzf      \
+exa bat file-roller gvfs gvfs-mtp htop imlib2 xclip ueberzug pacman-contrib cava   \
+xorg-xsetroot simplescreenrecorder ytfzfim xdg-user-dirs catppuccin-gtk-theme      \
+firefox noto-fonts libxft-bgra rofi-emoji xdotool xcolor
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌

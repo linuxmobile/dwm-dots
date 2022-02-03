@@ -1,0 +1,13 @@
+# media
+video/*; mpv "%s"
+audio/ogg; mpv --speed=1.33 "%s"
+audio/mpeg; mpv --no-video "%s"
+image/*; viewnior "%s"
+
+# text
+text/html; w3m "%s"
+text/html; open -a firefox "%s"
+text/plain; less "%s"
+
+# fallback to vim
+text/*; nvim "%s"

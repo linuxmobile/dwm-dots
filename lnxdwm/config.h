@@ -5,6 +5,13 @@
 #define XF86AudioPlay 0x1008ff14
 #define XF86HomePage 0x1008ff18
 
+/* Define Fx Keys */
+#define F1 0xffbe
+#define F2 0xffbf
+#define F3 0xffc0
+#define F4 0xffc1
+#define F5 0xffc2
+
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -161,7 +168,14 @@ static Key keys[] = {
     {0, XF86AudioLowerVolume, spawn,   SHCMD("~/.scripts/notify/change-volume down")},
     {0, XF86AudioPlay,        spawn,   SHCMD("~/.scripts/notify/change-volume mute")},
     {0, XF86HomePage, 	      spawn,   SHCMD("farge --notify")},
-    
+
+    /* Fx Keybinding */
+    { MODKEY,			    F1,		view,           {0} },
+    { MODKEY,			    F3,		hidewin,        {0} },
+    { MODKEY,			    F2,		restorewin,     {0} },
+    { MODKEY,			    F4,		spawn,		SHCMD("~/.scripts/notify/change-volume up")},
+    { MODKEY,			    F5,		spawn,		SHCMD("~/.scripts/notify/change-volume down")},
+
     
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY|ControlMask,                       XK_w,      tabmode,        { -1 } },

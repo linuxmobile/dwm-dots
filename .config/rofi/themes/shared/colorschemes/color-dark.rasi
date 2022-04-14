@@ -3,13 +3,13 @@
   bg-semilight: #1E1E2E;
   bg-light: #302D41;
   fg: #D9E0EE;
-  red: #E38C8F;
-  wifi-accent: #E38C8F;
-  blue: #A4B9EF;
-  green: #B1E3AD;
-  bg-hover: #A4B9EF;
+  red: #E27186;
+  wifi-accent: #B3878F;
+  blue: #e27186;
+  green: #6DA59B;
+  bg-hover: #b3878f;
   fg-hover: #1E1E2E;
-  fg-unhover: #A4B9EF;
+  fg-unhover: #E27186;
   network-header: url("assets/dark/network-header.png", height);
   launcher-header: url("assets/dark/launcher-header.png", height);
 }

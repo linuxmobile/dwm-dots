@@ -18,7 +18,7 @@ options="$speakers\n$volumedown\n$mute\n$volumeup\n$headphones"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $speakers)
-        pactl set-sink-port 0 analog-output-lineout
+        pactl set-sink-port 0 analog-output-headphones
         $NOTIFIER -i "$ICONDIR/speaker.png" -t 2000 -r 123  'Audio Output Switch' 'Switched to Speakers.' 
         ;;
     $volumedown)
@@ -31,7 +31,7 @@ case $chosen in
         ~/.scripts/notify/change-volume up
         ;;
     $headphones)
-        pactl set-sink-port 0 analog-output-headphones
+        pactl set-sink-port 0 analog-output-lineout
 $NOTIFIER -i "$ICONDIR/headphones.png" -t 2000 -r 123  'Audio Output Switch' 'Switched to Headphones.'
         ;;
 esac

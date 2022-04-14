@@ -1,129 +1,72 @@
-#--------------------------------------------------------------------------------
-#	▒███████▒  ██████  ██░ ██     ▄████▄   ▒█████   ███▄    █   █████▒██▓  ▄████ 
-#	▒ ▒ ▒ ▄▀░▒██    ▒ ▓██░ ██▒   ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ ▓██   ▒▓██▒ ██▒ ▀█▒
-#	░ ▒ ▄▀▒░ ░ ▓██▄   ▒██▀▀██░   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒▒████ ░▒██▒▒██░▄▄▄░
-#	  ▄▀▒   ░  ▒   ██▒░▓█ ░██    ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒░▓█▒  ░░██░░▓█  ██▓
-#	▒███████▒▒██████▒▒░▓█▒░██▓   ▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░░▒█░   ░██░░▒▓███▀▒
-#	░▒▒ ▓░▒░▒▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒   ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒ ░   ░▓   ░▒   ▒ 
-#	░░▒ ▒ ░ ▒░ ░▒  ░ ░ ▒ ░▒░ ░     ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░ ░      ▒ ░  ░   ░ 
-#	░ ░ ░ ░ ░░  ░  ░   ░  ░░ ░   ░        ░ ░ ░ ▒     ░   ░ ░  ░ ░    ▒ ░░ ░   ░ 
-#	  ░ ░          ░   ░  ░  ░   ░ ░          ░ ░           ░         ░        ░ 
-#	░                            ░                                               
-#-----------------------------By: @linuxmobile-----------------------------------
+#! /bin/zsh
+SHELL=$(which zsh || echo '/bin/zsh')
 
+setopt autocd              # change directory just by typing its name
+setopt interactivecomments # allow comments in interactive mode
+setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # hide error message if there is no match for the pattern
+setopt notify              # report the status of background jobs immediately
+setopt numericglobsort     # sort filenames numerically when it makes sense
+setopt promptsubst         # enable command substitution in prompt
+setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
+setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
+setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# enable completion features
+autoload -Uz compinit
+compinit -i
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=${HOME}/bin:/usr/local/bin:$PATH
-export PATH="${HOME}/.local/bin:${HOME}/.cargo/bin:${PATH}"
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
-# Path to use local/bin
-export PATH="${PATH}:${HOME}/.local/bin"
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$HOME/.config/zsh/.zcompcache"
 
-# Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.oh-my-zsh"
+# Define completers
+zstyle ':completion:*' completer _extensions _complete _approximate
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
+zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
 
- ZSH_THEME="skill"
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# Set list of themes to pick from when loading at random.
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Only display some tags for the command cd
+zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# History configurations
+HISTFILE="$HOME/.cache/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=20000
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# source plugins
+source $HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#484E5B,underline"
 
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# tty
+if [ "$TERM" = "linux" ] ; then
+    echo -en "\e]P0232323"
+fi
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions zsh-syntax-highlighting bgnotify)
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-setopt INC_APPEND_HISTORY
-source "${ZSH}/oh-my-zsh.sh"
-
-# This speeds up pasting when using zsh-autosuggestions.
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
-paste_init() {
-  OLD_SELF_INSERT="${${(s.:.)widgets[self-insert]}[2,3]}"
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+# custom function
+toppy() {
+    history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 21
 }
-paste_done() {
-  zle -N self-insert "$OLD_SELF_INSERT"
+
+cd() {
+	builtin cd "$@" && command ls --group-directories-first --color=auto -F
 }
-zstyle :bracketed-paste-magic paste-init paste_init
-zstyle :bracketed-paste-magic paste-finish paste_done
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment.
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions.
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 
 ###############################
@@ -205,14 +148,13 @@ alias la="exa -lgha --icons --group-directories-first"
 # Color-Toys Aliases
 alias bloks="${HOME}/.color-toys/bloks"
 
-# GPG Dialog
-export GPG_TTY="$(tty)"
+# init starship
+eval "$(starship init zsh)"
+# setup starship custom prompt
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-# Bat Theme
-export BAT_THEME="base16"
-
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+# Path to use local/bin
+export PATH="${PATH}:${HOME}/.local/bin"
 
 export YTFZF_EXTMENU='rofi -dmenu -fuzzy -width 1500'
 export YTFZF_ENABLE_FZF_DEFUALT_OPTS=0

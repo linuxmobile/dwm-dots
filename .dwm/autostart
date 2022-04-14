@@ -3,10 +3,10 @@
 # add your autostart stuffs here
 
 # Add Background
-xwallpaper --zoom ~/.wallpapers/1.jpg &
+xwallpaper --zoom ~/.wallpapers/4.png &
 
 # Xresources
-xrdb merge ~/.Xresources
+xrdb merge ~/.Xresources &
 
 # Set Layout to Latam
 setxkbmap latam &
@@ -21,7 +21,10 @@ dunst -config ~/.config/dunst/dunstrc-dark-left &
 xclip &
 
 # Run compositor
-# picom &
+picom &
+
+# test reset wal-git
+wal -r &
 
 # run bar script and dwm ( do not remove this )
 ~/.dwm/bar/./bar.sh &

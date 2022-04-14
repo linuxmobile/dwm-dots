@@ -6,7 +6,7 @@
 interval=0
 
 # load colors!
-. ~/.dwm/bar/themes/catppuccin
+. ~/.dwm/bar/themes/aesthetic
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)

@@ -43,11 +43,13 @@ Como suelen decir en la comunidad de linux. Solamente [R.T.F.M](https://en.wikip
 ### Instalación (Mucho CUIDADO CON ESTO)
 <details>
 <summary><b>Automática</b></summary>
+
 ```sh
 cd ~/Downloads/
 wget https://github.com/linuxmobile/runarch/blob/master/dwm/install.sh 
 ./install.sh
 ```
+
 </details>
 
 

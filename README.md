@@ -22,10 +22,10 @@
 ---
 
 * **Window Manager** • [DWM ](https://github.com/siduck/chadwm)🎨 Tiles Everywhere!
-* **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
+* **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [starship](https://github.com/starship/starship) Cross Shell Platform!
 * **Terminal** • [ST ](https://github.com/siduck/st) 💻 Una terminal muy poderosa y con soporte a imagenes!
 * **Panel** • [dwm-bar ](https://github.com/siduck/chadwm)🍧 Sencilla, sin lujos!
-* **Compositor** • [Picom ](https://github.com/yshui/picom) 🍩 rounded corners y mucho BLUR!
+* **Compositor** • [Picom ](https://github.com/Arian8j2/picom-jonaburg-fix) 🍩 rounded corners y mucho BLUR!
 * **Notify Daemon** • [Dunst ](https://github.com/dunst-project/dunst) 🍃 minimalista!
 * **Launcher** • [Rofi ](https://github.com/davatorium/rofi) 🚀 Realmente rápido y customizable!
 * **File Manager** • [Ranger ](https://github.com/ranger/ranger)🔖 customizado!
@@ -39,6 +39,21 @@
 
 Esto va a ser un intento de un "paso a paso". Pero siempre recomiendo no copiar y pegar al pie de la letra. Sino "inspirarse".  
 Como suelen decir en la comunidad de linux. Solamente [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
+
+### Instalación (Mucho CUIDADO CON ESTO)
+<details>
+<summary><b>Automática</b></summary>
+```sh
+cd ~/Downloads/
+wget https://github.com/linuxmobile/runarch/blob/master/dwm/install.sh 
+./install.sh
+```
+</details>
+
+
+<details>
+
+<summary><b>Manual</b></summary>
 
 ### Instalación (dependencias y paquetes)
 
@@ -56,36 +71,29 @@ cd paru
 makepkg -si  
 ```
 
-#### Instalamos Oh-My-Zsh 🐚
-
-```sh
-# First install Oh-My-Zsh  
-echo "### Installing oh-my-zsh"  
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  
-```
-
 #### Instalando los paquetes requeridos 📦
 
 ```sh
 echo "### Installing Required Packages"
-paru -S python ffmpeg pipewire pipewire-alsa pipewire-pulse alsa-utils dunst       \
-thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler w3m neovim    \
-viewnior mpv htop lxappearance picom-jonaburg-fix rofi rsync pavucontrol farge-git \
-ranger python-pip noto-fonts-emoji noto-fonts-cjk xwallpaper scrot imlib2 fzf      \
-exa bat file-roller gvfs gvfs-mtp htop imlib2 xclip ueberzug pacman-contrib cava   \
-xorg-xsetroot simplescreenrecorder ytfzfim xdg-user-dirs catppuccin-gtk-theme      \
-firefox noto-fonts libxft-bgra rofi-emoji xdotool xcolor
+paru -S dunst ffmpeg ffmpegthumnailer tumbler neovim viewnior mpv rofi rsync scrot  \
+picom-jonaburg-fix pavucontrol ranger noto-fonts xwallpaper imlib2 fzf exa bat      \
+gvfs file-roller xclip ueberzug pacman-contrib cava libxft-bgra rofi-emoji starship 
+```
+
+**Como adicional se puede instalar**
+```sh
+paru -S pipewire pipewire-alsa pipewire-pulse # Remplazando pulseaudio \
+thunar thunar-volman thunar-archive-plugin # Si no te gusta ranger     
 ```
 
 #### Instalamos Oh-My-Zsh Plugins 🔌
 
 ```sh 
 echo "### Installing Oh-My-Zsh Plugins"
-git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth 1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:~/.oh-my-zsh/custom}/plugins/zsh-completions  
 ```
-
 
 #### Ahora procedemos a Clonar y copiar los Dotfiles
 
@@ -123,19 +131,24 @@ cd $HOME/dwm-dots/
 rsync -avxHAXP --exclude '.git*' .* ~/  
 ```
 
-##### Agregamos los iconos
-
+##### Agregamos las fuentes que yo utilizo 
 ```sh
-pushd ~/.icons/ && \
-tar -xJf oomox-aesthetic-light.tar.xz && tar -xJf oomox-aesthetic-dark.tar.xz && \
-sudo ln -vs ~/.icons/oomox-aesthetic-dark /usr/share/icons/
-sudo ln -vs ~/.icons/oomox-aesthetic-light /usr/share/icons/
-rm -rf *.tar.xz
-popd 
+mkdir -p $HOME/Downloads/nerdfonts/  # Creamos una carpeta para las fonts
+cd $HOME/Downloads/                  # Vamos al directorio creado
+
+# Clonamos las fuentes
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/2.2.0-RC/CascadiaCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/2.2.0-RC/Iosevka.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/2.2.0-RC/JetBrainsMono.zip
+
+unzip '*.zip' -d $HOME/Downloads/nerdfonts/    # Descomprimimos
+rm -rf *.zip                                   # Borramos los .zip
+
+sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/   # Y copiamos las fuentes al directorio del sistema
 ```
 
-##### Por último actualizamos las fuentes
-
+##### Por último regeneramos el cache de las fuentes
 ```sh 
 fc-cache -rv  
 ```

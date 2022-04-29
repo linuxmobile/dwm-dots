@@ -125,8 +125,7 @@ alias cpu="ps axch -o cmd:15,%cpu --sort=-%cpu | head"
 # Check Apps eating mem
 alias mem="ps axch -o cmd:15,%mem --sort=-%mem | head"
 
-# ps_mem
-alias psmem="${PRIV} ps_mem | grep -E 'Program|dwm|dunst|picom|zsh|---'"
+alias git-rm="git ls-files --deleted -z | xargs -0 git rm"
 
 # Set wallpaper and Colors
 alias wp="~/.scripts/wp"
@@ -147,6 +146,7 @@ alias la="exa -lgha --icons --group-directories-first"
 
 # Color-Toys Aliases
 alias bloks="${HOME}/.color-toys/bloks"
+alias copyhash="${HOME}/copyhash.sh"
 
 # init starship
 eval "$(starship init zsh)"
@@ -158,3 +158,8 @@ export PATH="${PATH}:${HOME}/.local/bin"
 
 export YTFZF_EXTMENU='rofi -dmenu -fuzzy -width 1500'
 export YTFZF_ENABLE_FZF_DEFUALT_OPTS=0
+
+export TODO_PATH="$HOME/Documents/todo"
+
+export EDITOR=nvim
+export VISUAL=nvim

@@ -147,6 +147,7 @@ alias la="exa -lgha --icons --group-directories-first"
 # Color-Toys Aliases
 alias bloks="${HOME}/.color-toys/bloks"
 alias copyhash="${HOME}/copyhash.sh"
+alias makemusic="pactl load-module module-remap-sink Music"
 
 # init starship
 eval "$(starship init zsh)"

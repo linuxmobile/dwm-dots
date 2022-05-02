@@ -148,6 +148,8 @@ alias la="exa -lgha --icons --group-directories-first"
 alias bloks="${HOME}/.color-toys/bloks"
 alias copyhash="${HOME}/copyhash.sh"
 alias makemusic="pactl load-module module-remap-sink Music"
+alias installed="grep -i installed /var/log/pacman.log
+"
 
 # init starship
 eval "$(starship init zsh)"

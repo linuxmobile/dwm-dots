@@ -1,17 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
-#define XF86AudioRaiseVolume 0x1008ff13
-#define XF86AudioLowerVolume 0x1008ff11
-#define XF86AudioPlay 0x1008ff14
-#define XF86HomePage 0x1008ff18
-
 /* Define Fx Keys */
 #define F1 0xffbe
 #define F2 0xffbf
 #define F3 0xffc0
 #define F4 0xffc1
 #define F5 0xffc2
-
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -37,7 +31,7 @@ static const int vertpadtab         = 33;
 static const int horizpadtabi       = 15;
 static const int horizpadtabo       = 15;
 static const int scalepreview       = 4;
-static       int tag_preview        = 0;        /* 1 means enable, 0 is off */
+static       int tag_preview        = 1;        /* 1 means enable, 0 is off */
 
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:medium:size=10",
                                         "Material Design Icons-Regular:size=10",
@@ -138,7 +132,7 @@ static const char *termcmd[]  = {  "st", NULL }; // change this to your term
 static Key keys[] = {
     /* modifier                     key        function        argument */
     /*{ MODKEY,                       XK_c,      spawn,          {.v = rofi } }, */
-    { MODKEY,                       XK_z, spawn,          {.v = termcmd }},
+    { MODKEY,                       XK_Return, spawn,          {.v = termcmd }},
     { MODKEY, XK_c, spawn, SHCMD("rofi -show drun")},
 
     /* {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},*/
@@ -160,14 +154,7 @@ static Key keys[] = {
     {MODKEY|ShiftMask, XK_y ,spawn, SHCMD("pkill -9 mpv")},
     
     /* Screenshots scripts */
-    {MODKEY,   XK_Print, spawn, SHCMD("~/.config/rofi/scripts/screenshot.sh")},
-    {0,   XK_Print, spawn, SHCMD("~/.scripts/screenshot-screen.sh")},
-
-    /* XF86 Keybinding */
-    {0, XF86AudioRaiseVolume, spawn,   SHCMD("~/.scripts/notify/change-volume up")},
-    {0, XF86AudioLowerVolume, spawn,   SHCMD("~/.scripts/notify/change-volume down")},
-    {0, XF86AudioPlay,        spawn,   SHCMD("~/.scripts/notify/change-volume mute")},
-    {0, XF86HomePage, 	      spawn,   SHCMD("farge --notify")},
+    {0,   XK_Print, spawn, SHCMD("~/.config/rofi/scripts/screenshot.sh")},
 
     /* Fx Keybinding */
     { MODKEY,			    F1,		view,           {0} },
@@ -190,7 +177,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
     { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
     { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-    { MODKEY,                       XK_Return, zoom,           {0} },
+    { MODKEY|ControlMask,                       XK_Return, zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
 
     // overall gaps

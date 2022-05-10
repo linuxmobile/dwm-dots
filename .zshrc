@@ -125,6 +125,8 @@ alias cpu="ps axch -o cmd:15,%cpu --sort=-%cpu | head"
 # Check Apps eating mem
 alias mem="ps axch -o cmd:15,%mem --sort=-%mem | head"
 
+alias psmem="sudo ps_mem | grep -E 'Program|awesome|picom|zsh|alacritty|---'"
+
 alias git-rm="git ls-files --deleted -z | xargs -0 git rm"
 
 # Set wallpaper and Colors
@@ -141,13 +143,15 @@ alias rain="~/.scripts/zsh/rain"
 alias topcmd="~/.scripts/zsh/tp"
 
 # Exa Settings
-alias ls="exa -lgh --icons --group-directories-first"
-alias la="exa -lgha --icons --group-directories-first"
+#alias ls="exa -lgh --icons --group-directories-first"
+#alias la="exa -lgha --icons --group-directories-first"
+alias ls="exa --icons --group-directories-first --color=auto"
+alias la="exa -a --icons --group-directories-first --color=auto"
 
 # Color-Toys Aliases
 alias bloks="${HOME}/.color-toys/bloks"
 alias copyhash="${HOME}/copyhash.sh"
-alias makemusic="pactl load-module module-remap-sink Music"
+alias makemusic="pactl load-module module-remap-sink sink_name=MUSIC"
 alias installed="grep -i installed /var/log/pacman.log
 "
 
